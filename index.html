@@ -185,6 +185,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    width: 100%;
   }
   .hero-profile-img {
     width: 280px;
@@ -506,6 +507,9 @@
     overflow: hidden;
     transition: all 0.4s;
     cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .project-card::after {
     content: '';
@@ -531,7 +535,7 @@
     margin-bottom: 0.75rem;
   }
   .project-card p { color: var(--white-dim); font-size: 0.9rem; margin-bottom: 1.25rem; }
-  .project-techs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .project-techs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
   .tech-badge {
     background: var(--orange-glow);
     border: 1px solid var(--border);
@@ -541,6 +545,16 @@
     color: var(--orange-light);
     font-family: 'JetBrains Mono', monospace;
   }
+  .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .project-link-btn {
+    font-size: 0.8rem;
+    color: var(--orange-light);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    border-bottom: 1px dashed var(--orange);
+    transition: color 0.2s;
+  }
+  .project-link-btn:hover { color: var(--white); }
 
   /* ── EDUCATION ── */
   .edu-card {
@@ -695,19 +709,19 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div id="hero-container" style="max-width:1200px;margin:0 auto;padding:6rem 4rem 4rem;position:relative;width:100%;">
+  <div style="max-width:1200px;margin:0 auto;position:relative;width:100%;">
     <div class="hero-flex">
-    <div class="hero-content">
-      <div class="hero-tag"><span class="tag-dot"></span>Available for Work</div>
-      <h1 class="hero-name">Nauman<br><span class="highlight">Haider</span></h1>
-      <p class="hero-role">Associate Software Engineer (MERN)</p>
-      <p class="hero-desc">Computer Science graduate and MERN Stack Developer crafting scalable, efficient full-stack applications. Passionate about CI/CD, cloud platforms, and clean architecture.</p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary">View My Work</a>
-        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      <div class="hero-content">
+        <div class="hero-tag"><span class="tag-dot"></span>Available for Work</div>
+        <h1 class="hero-name">Nauman<br><span class="highlight">Haider</span></h1>
+        <p class="hero-role">MERN Stack Developer & AI Integrations</p>
+        <p class="hero-desc">MERN Stack Developer building scalable cloud applications, B2B platforms, retail systems, and AI-powered web solutions with automated CI/CD and production infrastructure.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-secondary">Get In Touch</a>
+        </div>
       </div>
-    </div>
-    <img src="professional pic.png" alt="Nauman Haider" class="hero-profile-img">
+      <img src="professional pic.png" alt="Nauman Haider" class="hero-profile-img">
     </div>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
@@ -725,25 +739,25 @@
       <div class="about-text reveal">
         <div class="section-label">About Me</div>
         <h2 class="section-title">Building the <span>Web</span> of Tomorrow</h2>
-        <p>I'm a Computer Science graduate from UET Lahore with hands-on experience building and deploying full-stack web applications using the MERN stack. I love turning complex problems into clean, efficient solutions.</p>
-        <p>My expertise spans from crafting responsive UIs to configuring CI/CD pipelines, deploying on AWS/GCP, and fine-tuning AI models for real-world productivity gains.</p>
-        <p>Based in Lahore, Pakistan — open to remote opportunities and interesting challenges worldwide.</p>
+        <p>I'm a passionate MERN Stack Developer with hands-on experience building and deploying full-stack web applications, B2B software architectures, and automated production pipelines.</p>
+        <p>My expertise spans from crafting responsive UIs with React/Next.js to configuring cloud infrastructure on AWS EC2, Nginx reverse proxies, SSL certificates, and integrating generative AI workflows.</p>
+        <p>Based in Lahore, Pakistan — open to remote opportunities and interesting full-stack engineering challenges worldwide.</p>
         <div class="about-stats">
           <div class="stat-card reveal reveal-delay-1">
             <div class="stat-num">1+</div>
-            <div class="stat-desc">Years of hands-on development experience</div>
+            <div class="stat-desc">Years of hands-on web development experience</div>
           </div>
           <div class="stat-card reveal reveal-delay-2">
             <div class="stat-num">1+</div>
-            <div class="stat-desc">Production projects successfully deployed</div>
+            <div class="stat-desc">Production & SaaS projects deployed live</div>
           </div>
           <div class="stat-card reveal reveal-delay-3">
-            <div class="stat-num">1+</div>
-            <div class="stat-desc">Cloud & DevOps tools mastered</div>
+            <div class="stat-num">AWS</div>
+            <div class="stat-desc">Cloud & DevOps infrastructure management</div>
           </div>
           <div class="stat-card reveal reveal-delay-4">
-            <div class="stat-num">∞</div>
-            <div class="stat-desc">Passion for learning and building</div>
+            <div class="stat-num">AI</div>
+            <div class="stat-desc">Generative AI and model integrations</div>
           </div>
         </div>
       </div>
@@ -770,25 +784,25 @@
     <div class="skills-grid">
       <div class="skill-card reveal reveal-delay-1">
         <div class="skill-icon">🖥️</div>
-        <h3>Languages</h3>
+        <h3>Languages & Core</h3>
         <div class="skill-tags">
           <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
           <span class="tag">Python</span>
-          <span class="tag">C++</span>
-          <span class="tag">SQL</span>
           <span class="tag">HTML/CSS</span>
+          <span class="tag">SQL</span>
         </div>
       </div>
       <div class="skill-card reveal reveal-delay-2">
-        <div class="skill-icon">⚙️</div>
+        <div class="skill-icon">⚙</div>
         <h3>Frameworks & Stacks</h3>
         <div class="skill-tags">
-          <span class="tag">MongoDB</span>
-          <span class="tag">Express.js</span>
           <span class="tag">React</span>
+          <span class="tag">Next.js</span>
           <span class="tag">Node.js</span>
-          <span class="tag">Angular</span>
-          <span class="tag">Bootstrap</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">MongoDB Atlas</span>
+          <span class="tag">Redux Toolkit</span>
         </div>
       </div>
       <div class="skill-card reveal reveal-delay-3">
@@ -796,23 +810,23 @@
         <h3>Cloud & DevOps</h3>
         <div class="skill-tags">
           <span class="tag">AWS EC2</span>
-          <span class="tag">AWS S3</span>
-          <span class="tag">GCP Cloud Run</span>
-          <span class="tag">Docker</span>
-          <span class="tag">CI/CD</span>
           <span class="tag">Nginx</span>
+          <span class="tag">Certbot SSL</span>
+          <span class="tag">PM2</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Git / GitHub</span>
         </div>
       </div>
       <div class="skill-card reveal reveal-delay-4">
         <div class="skill-icon">🤖</div>
-        <h3>AI & Tools</h3>
+        <h3>AI & Integrations</h3>
         <div class="skill-tags">
-          <span class="tag">Vertex AI</span>
-          <span class="tag">Gemini</span>
-          <span class="tag">VS Code</span>
-          <span class="tag">Linux</span>
-          <span class="tag">LaTeX</span>
-          <span class="tag">Dropbox API</span>
+          <span class="tag">Gemini AI</span>
+          <span class="tag">OpenAI API</span>
+          <span class="tag">Cloudinary</span>
+          <span class="tag">Stripe</span>
+          <span class="tag">Socket.io</span>
+          <span class="tag">REST APIs</span>
         </div>
       </div>
     </div>
@@ -833,9 +847,9 @@
         <div class="timeline-company">Techons</div>
         <div class="timeline-role">MERN Stack Developer</div>
         <ul class="timeline-desc">
-          <li>Built and deployed scalable MERN applications with user authentication, dashboards, and real-time updates.</li>
-          <li>Implemented CI/CD workflows and server configurations for smooth, zero-downtime deployments.</li>
-          <li>Fine-tuned AI models to enhance team productivity and automate repetitive workflows.</li>
+          <li>Architecting and deploying full-stack MERN & SaaS web applications (including Three Star B2B and Nexora POS).</li>
+          <li>Configuring production servers on AWS EC2 instances, setting up Nginx reverse proxies, and securing domains with Let's Encrypt Certbot SSL.</li>
+          <li>Integrating AI models, payment gateways, and real-time synchronization databases to optimize user workflows.</li>
         </ul>
       </div>
       <div class="timeline-item reveal reveal-delay-2">
@@ -844,8 +858,8 @@
         <div class="timeline-company">AppsGeni</div>
         <div class="timeline-role">Associate Software Engineer</div>
         <ul class="timeline-desc">
-          <li>Collaborated on MERN applications with secure authentication and real-time data updates.</li>
-          <li>Assisted in deploying applications on cloud platforms and maintaining production stability.</li>
+          <li>Collaborated on building modular MERN stack applications with secure JWT authentication and role-based access control.</li>
+          <li>Assisted in frontend UI optimizations and backend database query performance.</li>
         </ul>
       </div>
     </div>
@@ -861,37 +875,99 @@
     <h2 class="section-title reveal">Featured <span>Projects</span></h2>
     <div class="projects-grid">
       <div class="project-card reveal reveal-delay-1" onmousemove="moveGlow(event,this)">
-        <div class="project-num">// 01</div>
-        <h3>Tubbz Yourself</h3>
-        <p>A customizable avatar creation platform powered by the Gemini AI model, featuring real-time preview capabilities and social sharing functionality.</p>
-        <div class="project-techs">
-          <span class="tech-badge">MongoDB</span>
-          <span class="tech-badge">Express</span>
-          <span class="tech-badge">React</span>
-          <span class="tech-badge">Node.js</span>
-          <span class="tech-badge">Gemini AI</span>
+        <div>
+          <div class="project-num">// 01</div>
+          <h3>Three Star (B2B App)</h3>
+          <p>A robust B2B workflow management and enterprise solution deployed live on AWS infrastructure with secure domain configurations.</p>
+          <div class="project-techs">
+            <span class="tech-badge">MERN Stack</span>
+            <span class="tech-badge">AWS EC2</span>
+            <span class="tech-badge">Nginx</span>
+            <span class="tech-badge">Certbot SSL</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://3star.3starcleaning.ca" target="_blank" class="project-link-btn">Visit Live ↗</a>
         </div>
       </div>
       <div class="project-card reveal reveal-delay-2" onmousemove="moveGlow(event,this)">
-        <div class="project-num">// 02</div>
-        <h3>LoanLink MGR</h3>
-        <p>A full-featured loan management platform with Dropbox integration for secure file storage, deployed on AWS EC2 with professional Nginx configurations.</p>
-        <div class="project-techs">
-          <span class="tech-badge">MERN Stack</span>
-          <span class="tech-badge">AWS EC2</span>
-          <span class="tech-badge">Nginx</span>
-          <span class="tech-badge">Dropbox API</span>
+        <div>
+          <div class="project-num">// 02</div>
+          <h3>Nexora POS</h3>
+          <p>A feature-rich Point of Sale SaaS platform for retail businesses featuring real-time analytics, inventory tracking, and invoice management.</p>
+          <div class="project-techs">
+            <span class="tech-badge">MERN Stack</span>
+            <span class="tech-badge">Redux Toolkit</span>
+            <span class="tech-badge">Chart.js</span>
+            <span class="tech-badge">JWT</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://pos.nexorapos.co.uk" target="_blank" class="project-link-btn">Visit Live ↗</a>
+          <a href="https://github.com/howarang5s/nexora-pos" target="_blank" class="project-link-btn">GitHub 🐙</a>
         </div>
       </div>
       <div class="project-card reveal reveal-delay-3" onmousemove="moveGlow(event,this)">
-        <div class="project-num">// 03</div>
-        <h3>Messy Report</h3>
-        <p>A responsive reporting system with an integrated Stripe payment gateway and multi-store architecture, enabling seamless subscription and billing management.</p>
-        <div class="project-techs">
-          <span class="tech-badge">MERN Stack</span>
-          <span class="tech-badge">Stripe</span>
-          <span class="tech-badge">Responsive UI</span>
-          <span class="tech-badge">REST API</span>
+        <div>
+          <div class="project-num">// 03</div>
+          <h3>Tubbz Yourself</h3>
+          <p>An AI-powered avatar creation and customization platform integrated with Gemini AI for dynamic 3D-style generation and social sharing.</p>
+          <div class="project-techs">
+            <span class="tech-badge">MERN Stack</span>
+            <span class="tech-badge">Gemini AI</span>
+            <span class="tech-badge">Cloudinary</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://tubbzyoursef.com" target="_blank" class="project-link-btn">Visit Live ↗</a>
+          <a href="https://github.com/rafeh398/tubzz" target="_blank" class="project-link-btn">GitHub 🐙</a>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-4" onmousemove="moveGlow(event,this)">
+        <div>
+          <div class="project-num">// 04</div>
+          <h3>Messy Report System</h3>
+          <p>Full-stack complaint management application featuring an officer rating system and integrated e-commerce features.</p>
+          <div class="project-techs">
+            <span class="tech-badge">MERN Stack</span>
+            <span class="tech-badge">Stripe</span>
+            <span class="tech-badge">Socket.io</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/howarang5s/MessyReport" target="_blank" class="project-link-btn">GitHub 🐙</a>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-1" onmousemove="moveGlow(event,this)">
+        <div>
+          <div class="project-num">// 05</div>
+          <h3>🛡️ Cyberbullying Detection</h3>
+          <p>AI research project detecting cyberbullying in image-text combinations using advanced computer vision and NLP techniques.</p>
+          <div class="project-techs">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">TensorFlow</span>
+            <span class="tech-badge">ResNetV2</span>
+            <span class="tech-badge">BERT</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/weirdrebel/CyberLens.git" target="_blank" class="project-link-btn">GitHub 🐙</a>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-2" onmousemove="moveGlow(event,this)">
+        <div>
+          <div class="project-num">// 06</div>
+          <h3>🖼️ Image API</h3>
+          <p>Image processing API equipped with AI-based search capabilities using vector embeddings.</p>
+          <div class="project-techs">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">CloudSQL</span>
+            <span class="tech-badge">Vertex AI</span>
+            <span class="tech-badge">Google Cloud Run</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/howarang5s/Project_Image_APi.git" target="_blank" class="project-link-btn">GitHub 🐙</a>
         </div>
       </div>
     </div>
@@ -909,7 +985,7 @@
       <div>
         <div class="edu-degree">BSc in Computer Science</div>
         <div class="edu-uni">University of Engineering and Technology — Lahore, Pakistan</div>
-        <div class="edu-courses">Relevant Courses: Data Structures & Algorithms · Database Systems · Cloud Computing · Artificial Intelligence · Object-Oriented Programming · Data Science</div>
+        <div class="edu-courses">Relevant Courses: Data Structures & Algorithms · Database Systems · Cloud Computing · Artificial Intelligence · Object-Oriented Programming</div>
       </div>
       <div class="edu-year">
         <span>2024</span>
@@ -928,7 +1004,7 @@
       <div class="contact-info reveal">
         <div class="section-label">Let's Talk</div>
         <h2 class="section-title">Get In <span>Touch</span></h2>
-        <p>Have a project in mind or want to discuss opportunities? I'd love to hear from you. Let's build something great together.</p>
+        <p>Have a project in mind or want to discuss full-stack and AI development opportunities? I'd love to hear from you. Let's build something great together.</p>
         <div class="contact-links">
           <a href="mailto:naumanbhatti053@gmail.com" class="contact-link">
             <div class="contact-link-icon">✉️</div>
@@ -937,25 +1013,18 @@
               naumanbhatti053@gmail.com
             </div>
           </a>
-          <a href="tel:03071030766" class="contact-link">
-            <div class="contact-link-icon">📞</div>
-            <div class="contact-link-text">
-              <strong>Phone</strong>
-              +92 307 1030766
-            </div>
-          </a>
-          <a href="https://linkedin.com/in/nauman-haider" target="_blank" class="contact-link">
+          <a href="https://www.linkedin.com/in/nauman-haider-97872a228/" target="_blank" class="contact-link">
             <div class="contact-link-icon">💼</div>
             <div class="contact-link-text">
               <strong>LinkedIn</strong>
-              linkedin.com/in/nauman-haider
+              Nauman Haider
             </div>
           </a>
-          <a href="https://github.com/nauman-haider" target="_blank" class="contact-link">
+          <a href="https://github.com/howarang5s" target="_blank" class="contact-link">
             <div class="contact-link-icon">🐙</div>
             <div class="contact-link-text">
               <strong>GitHub</strong>
-              github.com/nauman-haider
+              @howarang5s
             </div>
           </a>
         </div>
@@ -980,7 +1049,7 @@
 </section>
 
 <footer>
-  <p>Designed & Built with ❤️ by <span>Nauman Haider</span> · 2025</p>
+  <p>Designed & Built with ❤️ by <span>Nauman Haider</span> · 2026</p>
 </footer>
 
 <script>
